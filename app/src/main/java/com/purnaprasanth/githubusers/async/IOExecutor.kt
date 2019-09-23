@@ -1,6 +1,6 @@
 package com.purnaprasanth.githubusers.async
 
-import com.purnaprasanth.githubusers.util.threadFactory
+import com.purnaprasanth.githubusers.base.util.threadFactory
 import java.util.concurrent.Executor
 import java.util.concurrent.SynchronousQueue
 import java.util.concurrent.ThreadPoolExecutor
