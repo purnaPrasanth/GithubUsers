@@ -72,14 +72,16 @@
     <dimen name="f40">40sp</dimen>
     <dimen name="f44">44sp</dimen>
 
-    <dimen name="textSizeTiny">@dimen/f18</dimen>
-    <dimen name="textSizeSmall">@dimen/f12</dimen>
-    <dimen name="textSize">@dimen/f14</dimen>
-    <dimen name="textSizeBig">@dimen/f16</dimen>
-    <dimen name="textSizeHuge">@dimen/f20</dimen>
+    <dimen name="textSizeTiny">@dimen/f10</dimen>
+    <dimen name="textSizeSmall">@dimen/f14</dimen>
+    <dimen name="textSize">@dimen/f16</dimen>
+    <dimen name="textSizeBig">@dimen/f20</dimen>
+    <dimen name="textSizeHuge">@dimen/f24</dimen>
 
     <dimen name="parent_padding">@dimen/d12</dimen>
     <dimen name="parent_padding_half">@dimen/d6</dimen>
     <dimen name="parent_padding_quarter">@dimen/d4</dimen>
+
+    <dimen name="elevation">@dimen/d2</dimen>
 
 </resources>
