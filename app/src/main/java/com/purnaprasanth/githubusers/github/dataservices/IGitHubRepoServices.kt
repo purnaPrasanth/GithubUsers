@@ -14,5 +14,5 @@ import retrofit2.http.GET
 interface IGitHubRepoServices {
 
     @GET
-    suspend fun getRepoDetails(repoUrl: String): GitHubRepo
+    suspend fun getRepoDetails(repoUrl: String): List<GitHubRepo>
 }
