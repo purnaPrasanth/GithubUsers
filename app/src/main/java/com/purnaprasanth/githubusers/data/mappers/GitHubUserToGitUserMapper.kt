@@ -14,6 +14,13 @@ import javax.inject.Singleton
  * Created by Purna on 2019-09-24 as a part of GithubUsers
  **/
 
+/**
+ * A [Mapper] to map [GitHubUser] to [GitUser].
+ *
+ * @param githubRepoServices an implementation of [IGitHubRepoServices] to fetch list repos for this [GitHubUser] from GitHub API
+ * @param gitHubRepoToGitRepoMapper a mapper to map [GitHubRepo] to [GitRepo]
+ */
+
 @Singleton
 class GitHubUserToGitUserMapper @Inject constructor(
     private val githubRepoServices: IGitHubRepoServices,
@@ -24,6 +31,6 @@ class GitHubUserToGitUserMapper @Inject constructor(
         name = from.name,
         photo = from.avatarUrl,
         userName = from.login,
-        repos = gitHubRepoToGitRepoMapper.toListMapper().map(githubRepoServices.getRepoDetails(from.reposUrl))
+        repos = gitHubRepoToGitRepoMapper.toListMapper().map(githubRepoServices.getRepos(from.reposUrl))
     )
 }

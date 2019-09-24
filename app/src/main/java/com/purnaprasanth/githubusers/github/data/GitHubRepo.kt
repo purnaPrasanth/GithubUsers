@@ -71,7 +71,7 @@ data class GitHubRepo(
     @SerializedName("has_wiki")
     val hasWiki: Boolean,
     @SerializedName("homepage")
-    val homepage: String,
+    val homepage: String? = null,
     @SerializedName("hooks_url")
     val hooksUrl: String,
     @SerializedName("html_url")
@@ -89,17 +89,17 @@ data class GitHubRepo(
     @SerializedName("labels_url")
     val labelsUrl: String,
     @SerializedName("language")
-    val language: Any,
+    val language: String ? = null,
     @SerializedName("languages_url")
     val languagesUrl: String,
     @SerializedName("license")
-    val license: Any,
+    val license: License? = null,
     @SerializedName("merges_url")
     val mergesUrl: String,
     @SerializedName("milestones_url")
     val milestonesUrl: String,
     @SerializedName("mirror_url")
-    val mirrorUrl: Any,
+    val mirrorUrl: String? = null,
     @SerializedName("name")
     val name: String,
     @SerializedName("node_id")
@@ -150,4 +150,54 @@ data class GitHubRepo(
     val watchers: Int,
     @SerializedName("watchers_count")
     val watchersCount: Int
+)
+data class License(
+    @SerializedName("key")
+    val key: String,
+    @SerializedName("name")
+    val name: String,
+    @SerializedName("node_id")
+    val nodeId: String,
+    @SerializedName("spdx_id")
+    val spdxId: String,
+    @SerializedName("url")
+    val url: String
+)
+data class Owner(
+    @SerializedName("avatar_url")
+    val avatarUrl: String,
+    @SerializedName("events_url")
+    val eventsUrl: String,
+    @SerializedName("followers_url")
+    val followersUrl: String,
+    @SerializedName("following_url")
+    val followingUrl: String,
+    @SerializedName("gists_url")
+    val gistsUrl: String,
+    @SerializedName("gravatar_id")
+    val gravatarId: String,
+    @SerializedName("html_url")
+    val htmlUrl: String,
+    @SerializedName("id")
+    val id: Int,
+    @SerializedName("login")
+    val login: String,
+    @SerializedName("node_id")
+    val nodeId: String,
+    @SerializedName("organizations_url")
+    val organizationsUrl: String,
+    @SerializedName("received_events_url")
+    val receivedEventsUrl: String,
+    @SerializedName("repos_url")
+    val reposUrl: String,
+    @SerializedName("site_admin")
+    val siteAdmin: Boolean,
+    @SerializedName("starred_url")
+    val starredUrl: String,
+    @SerializedName("subscriptions_url")
+    val subscriptionsUrl: String,
+    @SerializedName("type")
+    val type: String,
+    @SerializedName("url")
+    val url: String
 )

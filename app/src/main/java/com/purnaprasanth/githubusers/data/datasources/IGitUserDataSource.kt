@@ -1,6 +1,8 @@
 package com.purnaprasanth.githubusers.data.datasources
 
+import com.purnaprasanth.githubusers.data.NetworkError
 import com.purnaprasanth.githubusers.data.NetworkResult
+import com.purnaprasanth.githubusers.data.NetworkSuccess
 import com.purnaprasanth.githubusers.data.model.GitUser
 
 /**
@@ -15,5 +17,11 @@ import com.purnaprasanth.githubusers.data.model.GitUser
 
 interface IGitUserDataSource {
 
+    /**
+     * To fetch the user details with username from GitHub API
+     *
+     * @param userName username/login of the user to fetched from GitHub API
+     * @return [NetworkSuccess] if this data source succeeds in fetching the user details, [NetworkError] if this data source fails in fetching the user details
+     */
     suspend fun getGitUserData(userName: String): NetworkResult<GitUser>
 }
