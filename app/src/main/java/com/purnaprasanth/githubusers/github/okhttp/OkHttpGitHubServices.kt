@@ -16,7 +16,7 @@ import retrofit2.converter.gson.GsonConverterFactory
  * An Implementation of [IGitHubServices] that generates services using [OkHttpClient] and [Retrofit]
  */
 
-internal class OkHttpGitHubServices(
+class OkHttpGitHubServices(
     okHttpClient: OkHttpClient,
     gson: Gson,
     versionInterceptor: VersionInterceptor
