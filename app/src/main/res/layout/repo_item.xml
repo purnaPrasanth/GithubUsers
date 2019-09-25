@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable name="repo"
+                  type="com.purnaprasanth.githubusers.data.model.GitRepo"/>
+
+    </data>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="@dimen/repo_cell_width"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/parent_padding"
+            android:background="@drawable/background_edittext"
+            android:elevation="@dimen/elevation"
+            android:layout_margin="@dimen/parent_padding_half">
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/repo_name"
+                  style="?android:textAppearanceMedium"
+                  android:singleLine="true"
+                  tools:text="Repo Name"
+                  android:text="@{repo.name}"
+                  android:lines="1"
+                  android:ellipsize="end"
+                  android:gravity="center"/>
+
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  style="?android:textAppearanceMedium"
+                  android:layout_gravity="center_horizontal"
+                  android:drawablePadding="@dimen/parent_padding_half"
+                  android:drawableStart="@drawable/ic_star"
+                  android:layout_marginTop="@dimen/parent_padding_half"
+                  android:text='@{repo.starsCount + ""}'
+                  tools:text="230"
+                  android:gravity="center"
+                  android:id="@+id/repo_stars"/>
+
+        <TextView android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/repo_desc"
+                  style="?android:textAppearanceSmall"
+                  android:layout_marginTop="@dimen/parent_padding_half"
+                  tools:text="Descrsafhagf erfeghrf rgfva ecatkwefawe weftkwefwet wetkf wedwtefd wekdtf wedkwet dwedtwedf wedt qedktwshgsdkjhgsdkghsdskhjg hakfgskjghsdfgkjhadfgkdfh fhfshr "
+                  android:text="@{repo.description}"
+                  android:lines="3"
+                  android:gravity="center"
+                  android:ellipsize="end"/>
+
+    </LinearLayout>
+</layout>

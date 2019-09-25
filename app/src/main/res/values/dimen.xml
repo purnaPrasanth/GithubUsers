@@ -84,4 +84,9 @@
 
     <dimen name="elevation">@dimen/d2</dimen>
 
+    <dimen name="toolbarHeight">@dimen/d56</dimen>
+    <dimen name="image_avatar">@dimen/d64</dimen>
+
+    <dimen name="repo_cell_width">@dimen/d240</dimen>
+
 </resources>

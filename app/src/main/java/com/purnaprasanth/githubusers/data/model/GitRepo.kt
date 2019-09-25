@@ -14,7 +14,7 @@ import com.purnaprasanth.githubusers.data.Mapper
 
 data class GitRepo(
     val name: String,
-    val description: String,
+    val description: String? = null,
     val link: String,
     val starsCount: Int
 )

@@ -19,4 +19,9 @@ class GithubUserApplication : DaggerApplication() {
         return DaggerAppComponent.factory().create(this)
     }
 
+    override fun onCreate() {
+        super.onCreate()
+        initializers.init(this)
+    }
+
 }

@@ -14,7 +14,7 @@ import com.purnaprasanth.githubusers.data.Mapper
 
 data class GitUser(
     val userName: String,
-    val name: String,
+    val name: String?,
     val photo: String,
     val repos: List<GitRepo>
 )

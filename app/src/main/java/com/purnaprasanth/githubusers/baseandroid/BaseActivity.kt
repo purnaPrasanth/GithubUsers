@@ -2,7 +2,6 @@ package com.purnaprasanth.githubusers.baseandroid
 
 import android.os.Bundle
 import androidx.annotation.LayoutRes
-import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import com.purnaprasanth.githubusers.base.AppDispatchers
@@ -34,6 +33,8 @@ abstract class BaseActivity<BINDING : ViewDataBinding>(@LayoutRes val layoutId: 
     protected lateinit var binding: BINDING
 
     private val parentJob = SupervisorJob()
+
+    protected abstract val TAG: String
 
     @Inject
     lateinit var dispatchers: AppDispatchers

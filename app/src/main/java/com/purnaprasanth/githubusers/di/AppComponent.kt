@@ -3,8 +3,8 @@ package com.purnaprasanth.githubusers.di
 import com.purnaprasanth.githubusers.GithubUserApplication
 import dagger.BindsInstance
 import dagger.Component
-import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
+import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 /**
@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
-        AndroidInjectionModule::class,
+        AndroidSupportInjectionModule::class,
         AppModule::class,
         NetworkModule::class,
         ExecutorModule::class,

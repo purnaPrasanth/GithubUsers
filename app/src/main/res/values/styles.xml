@@ -1,15 +1,22 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textAppearance">@style/AppTheme.Text</item>
+        <item name="android:textAppearanceSmall">@style/AppTheme.Text.Small</item>
+        <item name="android:textAppearanceMedium">@style/AppTheme.Text.Medium</item>
+        <item name="android:textAppearanceLarge">@style/AppTheme.Text.Large</item>
+        <item name="android:titleTextAppearance">@style/AppTheme.Text.Title</item>
         <item name="android:editTextStyle">@style/AppTheme.EditText</item>
         <item name="android:windowBackground">@color/windowBackground</item>
+        <item name="android:toolbarStyle">@style/AppTheme.Toolbar</item>
         <item name="android:textAppearanceListItem">@style/AppTheme.Text.ListItem</item>
         <item name="android:colorBackground">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="imageAvatar">@style/AppTheme.Image.Avatar</item>
     </style>
 
     <style name="AppTheme.Text" parent="TextAppearance.AppCompat">
@@ -18,9 +25,42 @@
         <item name="android:textColor">@color/textColorPrimary</item>
     </style>
 
+    <style name="AppTheme.Text.Small" parent="AppTheme.Text">
+        <item name="android:textSize">@dimen/textSizeSmall</item>
+    </style>
+
+    <style name="AppTheme.Text.Medium" parent="AppTheme.Text">
+        <item name="android:textSize">@dimen/textSizeBig</item>
+    </style>
+
+    <style name="AppTheme.Text.Large" parent="AppTheme.Text">
+        <item name="android:textSize">@dimen/textSizeHuge</item>
+    </style>
+
+    <style name="AppTheme.Text.Title" parent="AppTheme.Text.Medium">
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
     <style name="AppTheme.EditText" parent="TextAppearance.AppCompat">
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textSize">@dimen/textSizeBig</item>
+        <item name="android:textColor">@color/textColorPrimary</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">@dimen/parent_padding</item>
+        <item name="android:background">@drawable/background_edittext</item>
+        <item name="android:elevation">@dimen/elevation</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="Widget.AppCompat.Toolbar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/toolbarHeight</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:titleTextAppearance">@style/BaseAppTheme.Text.ToolBarTitle</item>
+    </style>
+
+    <style name="BaseAppTheme.Text.ToolBarTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/quicksand_bold</item>
+        <item name="android:textSize">@dimen/textSizeHuge</item>
         <item name="android:textColor">@color/textColorPrimary</item>
     </style>
 
@@ -28,6 +68,14 @@
         <item name="android:fontFamily">@font/roboto_bold</item>
         <item name="android:textSize">@dimen/textSizeHuge</item>
         <item name="android:textColor">@color/textColorPrimary</item>
+    </style>
+
+    <style name="AppTheme.Image.Avatar" parent="Widget.AppCompat.ImageButton">
+        <item name="android:layout_width">@dimen/image_avatar</item>
+        <item name="android:layout_height">@dimen/image_avatar</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:background">@null</item>
     </style>
 
 </resources>

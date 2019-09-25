@@ -35,7 +35,7 @@ data class GitHubRepo(
     @SerializedName("deployments_url")
     val deploymentsUrl: String,
     @SerializedName("description")
-    val description: String,
+    val description: String?,
     @SerializedName("disabled")
     val disabled: Boolean,
     @SerializedName("downloads_url")

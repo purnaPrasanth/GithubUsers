@@ -44,7 +44,7 @@ data class GitHubUser(
     @SerializedName("blog")
     val blog: String,
     @SerializedName("company")
-    val company: String,
+    val company: String? = null,
     @SerializedName("created_at")
     val createdAt: String,
     @SerializedName("email")
@@ -58,9 +58,9 @@ data class GitHubUser(
     @SerializedName("hireable")
     val hireable: Boolean? = null,
     @SerializedName("location")
-    val location: String,
+    val location: String? = null,
     @SerializedName("name")
-    val name: String,
+    val name: String? = null,
     @SerializedName("public_gists")
     val publicGists: Int,
     @SerializedName("public_repos")

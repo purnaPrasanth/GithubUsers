@@ -46,6 +46,10 @@ class NetworkModule {
 
     @Provides
     @Singleton
+    fun provideGitHubVersionInterceptor() = VersionInterceptor()
+
+    @Provides
+    @Singleton
     fun provideOkHttpGithubServices(
         okHttpClient: OkHttpClient,
         gson: Gson,

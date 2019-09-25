@@ -16,12 +16,13 @@ import dagger.multibindings.IntoSet
 
 @Module
 abstract class AppModuleBinds {
-    @Binds
-    @App
-    abstract fun bindApplicationContext(application: GithubUserApplication): Context
 
     @Binds
     abstract fun bindApplication(application: GithubUserApplication): Application
+
+    @Binds
+    @App
+    abstract fun bindApplicationContext(application: GithubUserApplication): Context
 
     @Binds
     @IntoSet

@@ -24,7 +24,10 @@ data class SuccessViewState<T>(val data: T) : ViewState<T>() {
  * Error implementation for state of a View [ViewState]
  * @param exception Error Details for Failure
  */
-data class ErrorViewState<T>(val exception: Exception) : ViewState<T>() {
+data class ErrorViewState<T>(
+    val exception: Exception,
+    val message: String
+) : ViewState<T>() {
     override fun get(): Nothing? = null
 }
 
