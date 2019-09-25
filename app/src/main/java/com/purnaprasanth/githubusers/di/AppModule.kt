@@ -1,6 +1,10 @@
 package com.purnaprasanth.githubusers.di
 
-import com.google.gson.Gson
+import android.content.Context
+import com.purnaprasanth.githubusers.annotation.App
+import com.purnaprasanth.githubusers.base.util.MoshiUtils
+import com.purnaprasanth.githubusers.baseandroid.SharedPrefManager
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -14,5 +18,13 @@ class AppModule {
 
     @Provides
     @Singleton
-    fun provideGSon() = Gson()
+    fun provideMoshi() = Moshi.Builder().build()
+
+    @Provides
+    @Singleton
+    fun provideMoshiUtils(moshi: Moshi) = MoshiUtils(moshi)
+
+    @Provides
+    @Singleton
+    fun provideSharedPrefManager(@App context: Context, moshiUtils: MoshiUtils) = SharedPrefManager(moshiUtils, context)
 }

@@ -1,12 +1,12 @@
 package com.purnaprasanth.githubusers.github.okhttp
 
-import com.google.gson.Gson
 import com.purnaprasanth.githubusers.github.IGitHubServices
 import com.purnaprasanth.githubusers.github.dataservices.IGitHubRepoServices
 import com.purnaprasanth.githubusers.github.dataservices.IGitHubUserServices
+import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 /**
  * Created by Purna on 2019-09-23 as a part of GithubUsers
@@ -18,8 +18,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class OkHttpGitHubServices(
     okHttpClient: OkHttpClient,
-    gson: Gson,
-    versionInterceptor: VersionInterceptor
+    versionInterceptor: VersionInterceptor,
+    moshi: Moshi
 ) : IGitHubServices {
 
     private val githubOkHttpClient: OkHttpClient = okHttpClient
@@ -29,8 +29,8 @@ class OkHttpGitHubServices(
 
     private val retrofit: Retrofit = Retrofit.Builder()
         .baseUrl("https://api.github.com")
-        .addConverterFactory(GsonConverterFactory.create(gson))
         .client(githubOkHttpClient)
+        .addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 
     override val gitHubUserServices: IGitHubUserServices by lazy {

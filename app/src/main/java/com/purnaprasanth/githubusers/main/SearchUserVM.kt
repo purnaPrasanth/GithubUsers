@@ -24,6 +24,8 @@ class SearchUserVM @Inject constructor(
 
     private val _userDetailState = MutableLiveData<ViewState<GitUser>>()
 
+    val fetchedUsers = gitUserRepo.fetchedUserLiveData()
+
     val userDetailState: LiveData<ViewState<GitUser>>
         get() = _userDetailState
 
@@ -33,6 +35,7 @@ class SearchUserVM @Inject constructor(
             when (val result = gitUserRepo.getGitUserDetails(username)) {
                 is NetworkSuccess -> {
                     _userDetailState.value = SuccessViewState(result.data)
+                    gitUserRepo.saveUserInSharedPref(result.data)
                 }
                 is NetworkError -> {
                     _userDetailState.value = ErrorViewState(result.exception, "")

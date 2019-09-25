@@ -1,68 +1,68 @@
 package com.purnaprasanth.githubusers.github.data
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 data class GitHubUser(
-    @SerializedName("avatar_url")
+    @field:Json(name = "avatar_url")
     val avatarUrl: String,
-    @SerializedName("events_url")
+    @field:Json(name = "events_url")
     val eventsUrl: String,
-    @SerializedName("following_url")
+    @field:Json(name = "following_url")
     val followingUrl: String,
-    @SerializedName("gists_url")
+    @field:Json(name = "gists_url")
     val gistsUrl: String,
-    @SerializedName("gravatar_id")
+    @field:Json(name = "gravatar_id")
     val gravatarId: String,
-    @SerializedName("html_url")
+    @field:Json(name = "html_url")
     val htmlUrl: String,
-    @SerializedName("id")
+    @field:Json(name = "id")
     val id: Int,
-    @SerializedName("login")
+    @field:Json(name = "login")
     val login: String,
-    @SerializedName("node_id")
+    @field:Json(name = "node_id")
     val nodeId: String,
-    @SerializedName("organizations_url")
+    @field:Json(name = "organizations_url")
     val organizationsUrl: String,
-    @SerializedName("received_events_url")
+    @field:Json(name = "received_events_url")
     val receivedEventsUrl: String,
-    @SerializedName("repos_url")
+    @field:Json(name = "repos_url")
     val reposUrl: String,
-    @SerializedName("site_admin")
+    @field:Json(name = "site_admin")
     val siteAdmin: Boolean,
-    @SerializedName("starred_url")
+    @field:Json(name = "starred_url")
     val starredUrl: String,
-    @SerializedName("subscriptions_url")
+    @field:Json(name = "subscriptions_url")
     val subscriptionsUrl: String,
-    @SerializedName("type")
+    @field:Json(name = "type")
     val type: String,
-    @SerializedName("url")
+    @field:Json(name = "url")
     val url: String,
-    @SerializedName("updated_at")
+    @field:Json(name = "updated_at")
     val updatedAt: String,
-    @SerializedName("bio")
+    @field:Json(name = "bio")
     val bio: String? = null,
-    @SerializedName("blog")
+    @field:Json(name = "blog")
     val blog: String,
-    @SerializedName("company")
+    @field:Json(name = "company")
     val company: String? = null,
-    @SerializedName("created_at")
+    @field:Json(name = "created_at")
     val createdAt: String,
-    @SerializedName("email")
+    @field:Json(name = "email")
     val email: String? = null,
-    @SerializedName("followers")
+    @field:Json(name = "followers")
     val followers: Int,
-    @SerializedName("followers_url")
+    @field:Json(name = "followers_url")
     val followersUrl: String,
-    @SerializedName("following")
+    @field:Json(name = "following")
     val following: Int,
-    @SerializedName("hireable")
+    @field:Json(name = "hireable")
     val hireable: Boolean? = null,
-    @SerializedName("location")
+    @field:Json(name = "location")
     val location: String? = null,
-    @SerializedName("name")
+    @field:Json(name = "name")
     val name: String? = null,
-    @SerializedName("public_gists")
+    @field:Json(name = "public_gists")
     val publicGists: Int,
-    @SerializedName("public_repos")
+    @field:Json(name = "public_repos")
     val publicRepos: Int
 )

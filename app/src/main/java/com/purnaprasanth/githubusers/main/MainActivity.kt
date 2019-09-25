@@ -1,5 +1,6 @@
 package com.purnaprasanth.githubusers.main
 
+import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.EditorInfo
 import androidx.lifecycle.Observer
@@ -25,6 +26,9 @@ class MainActivity : BaseActivity<ActivityMainBinding>(R.layout.activity_main) {
 
     override fun initUI() {
         binding.viewModel = searchUserVM
+        searchUserVM.fetchedUsers.observe(this, Observer {
+            Log.d(TAG, it.toString())
+        })
         searchUserVM.userDetailState.observe(this, Observer {
             if (it is SuccessViewState) binding.userDetailStateView.userDetailView.binding.userIv.load(it.data.photo) {
                 transformations(CircleCropTransformation())

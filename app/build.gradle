@@ -50,7 +50,8 @@ dependencies {
     implementation("com.facebook.stetho:stetho-okhttp3:1.5.1")
 
     implementation("com.squareup.retrofit2:retrofit:2.6.1")
-    implementation("com.squareup.retrofit2:converter-gson:2.6.1")
+    implementation("com.squareup.retrofit2:converter-moshi:2.6.1")
+    implementation("com.squareup.moshi:moshi:1.8.0")
 
     implementation("io.coil-kt:coil:0.7.0")
 
@@ -66,6 +67,7 @@ dependencies {
     implementation("androidx.recyclerview:recyclerview:1.1.0-beta04")
     implementation("androidx.recyclerview:recyclerview-selection:1.0.0")
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-alpha02")
+    implementation("androidx.preference:preference-ktx:1.1.0")
 
     implementation("com.github.magiepooh:recycler-itemdecoration:1.1.1@aar")
 

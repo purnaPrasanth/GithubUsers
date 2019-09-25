@@ -2,13 +2,13 @@ package com.purnaprasanth.githubusers.di
 
 import android.app.Application
 import com.facebook.stetho.okhttp3.StethoInterceptor
-import com.google.gson.Gson
 import com.purnaprasanth.githubusers.annotation.IO
 import com.purnaprasanth.githubusers.base.AppDispatchers
 import com.purnaprasanth.githubusers.github.IGitHubServices
 import com.purnaprasanth.githubusers.github.okhttp.GitHubCoilDelegate
 import com.purnaprasanth.githubusers.github.okhttp.OkHttpGitHubServices
 import com.purnaprasanth.githubusers.github.okhttp.VersionInterceptor
+import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
 import okhttp3.Dispatcher
@@ -27,7 +27,7 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun provideOkhttp(@IO ioExecutor: Executor, application: Application) = OkHttpClient.Builder()
+    fun provideOkhttp(@IO ioExecutor: Executor) = OkHttpClient.Builder()
         .dispatcher(Dispatcher(ioExecutor as ExecutorService))
         .connectTimeout(20, TimeUnit.SECONDS)
         .callTimeout(20, TimeUnit.SECONDS)
@@ -52,9 +52,9 @@ class NetworkModule {
     @Singleton
     fun provideOkHttpGithubServices(
         okHttpClient: OkHttpClient,
-        gson: Gson,
+        moshi: Moshi,
         versionInterceptor: VersionInterceptor
-    ) = OkHttpGitHubServices(okHttpClient, gson, versionInterceptor)
+    ) = OkHttpGitHubServices(okHttpClient, versionInterceptor, moshi)
 
     @Provides
     fun provideIGithubUserServices(githubServices: IGitHubServices) = githubServices.gitHubUserServices
