@@ -12,7 +12,6 @@ import com.purnaprasanth.githubusers.baseandroid.SuccessViewState
 import com.purnaprasanth.githubusers.databinding.ActivityMainBinding
 import javax.inject.Inject
 
-
 /**
  * Created by Purna on 2019-09-10 as a part of GithubUsers
  **/

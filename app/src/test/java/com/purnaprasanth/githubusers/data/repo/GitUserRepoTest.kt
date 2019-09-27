@@ -1,13 +1,18 @@
 package com.purnaprasanth.githubusers.data.repo
 
+import android.app.Application
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
+import androidx.test.core.app.ApplicationProvider
 import com.purnaprasanth.githubusers.base.AppDispatchers
+import com.purnaprasanth.githubusers.base.util.MoshiUtils
+import com.purnaprasanth.githubusers.baseandroid.SharedPrefManager
 import com.purnaprasanth.githubusers.data.NetworkError
 import com.purnaprasanth.githubusers.data.NetworkSuccess
 import com.purnaprasanth.githubusers.data.datasources.IGitUserDataSource
 import com.purnaprasanth.githubusers.gitHubUser
 import com.purnaprasanth.githubusers.gitUser
 import com.purnaprasanth.githubusers.github.base.BaseTestRunner
+import com.squareup.moshi.Moshi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import org.junit.After
@@ -31,6 +36,10 @@ class GitUserRepoTest : BaseTestRunner {
     @get:Rule
     val rule = InstantTaskExecutorRule()
 
+    val moshiUtils = MoshiUtils(Moshi.Builder().build())
+
+    val context = ApplicationProvider.getApplicationContext<Application>()
+
     lateinit var gitUserRepo: GitUserRepo
 
     @Mock
@@ -48,7 +57,9 @@ class GitUserRepoTest : BaseTestRunner {
 
         gitUserRepo = GitUserRepo(
             iGitUserDataSource,
-            appDispatchers
+            appDispatchers,
+            SharedPrefManager(moshiUtils, context),
+            moshiUtils
         )
     }
 
